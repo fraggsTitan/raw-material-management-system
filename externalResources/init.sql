@@ -25,6 +25,7 @@ supplier_id bigint REFERENCES suppliers(supplier_id),place_date  timestamp,
 receive_date timestamp,ordered_units int,received_units int,
 status delivery_status);
 
+CREATE TYPE usage_status AS ENUM('Used','Wasted','Unused');
 CREATE TABLE material_updates(shipment_id bigserial PRIMARY KEY,
 material_id bigint REFERENCES raw_materials(material_id)
 ,units int,date_added timestamp,was_used boolean DEFAULT FALSE,
@@ -40,3 +41,4 @@ GRANT CONNECT ON DATABASE inventory_of_rmms TO rmms;
 GRANT USAGE ON SCHEMA public TO rmms;
 GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO rmms;
 
+ 

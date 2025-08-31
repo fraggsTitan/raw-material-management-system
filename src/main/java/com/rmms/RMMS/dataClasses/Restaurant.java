@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class Restaurant {
-	private long id;
-	private String rest_name;
+	private Long id;
+	private String restName;
 	private String location;
 }
